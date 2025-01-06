@@ -62,3 +62,10 @@ This doesn't really take input, so it's likely not a good way to get more capabi
 
 ### dec-notes
 @TODO look into this protocol, try connecting, see if it's a good foothold
+
+### Playback Menu Option
+This is an option in the menu to play videos back on the screen. 
+#### Playback of other Formats
+I downloaded some of the MP$ files I generated, converted them to mkv and mpeg files, and uploaded them to the web interface. Both files reported a parsing error by the web interface, so I downloaded the files again to make sure the content was correct and they seem to have uploaded fine. 
+
+Upon entering the playback menu, the files were not present. 
