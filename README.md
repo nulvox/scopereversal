@@ -44,7 +44,7 @@ MAC Address: CC:64:1A:3B:C5:D9 (Shenzhen Bilian Electronic，LTD)
 Cool, cheap wifi cam with http, rtsp, and dec-notes (which I was unfamiliar with until this, but is apparently a second conferencing solution... :shrug:)
 
 ### http
-This is a simple webpage to manage the contents of the SD card. It lets the user upload new files to the various folders and download what is there. A curious "Upload Custom" form is present which plays by different rules somehow and passes the url param `?custom=1` and the files don't seem to appear on the SD card anywhere, suggesting they may end up somewhere on the root. 
+This is a simple webpage to manage the contents of the SD card. It lets the user upload new files to the various folders and download what is there. A curious "Upload Custom" form is present which plays by different rules somehow and passes the url param `?custom=1` and the files don't seem to appear on the SD card anywhere, suggesting they may end up somewhere on the device root fs. 
 
 #### Dir Traversal
 The first thing I wanted to do was escape the http root, no dice on trivial inputs from the Webpage. Still need to try it out from curl or python
