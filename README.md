@@ -62,6 +62,8 @@ This doesn't really take input, so it's likely not a good way to get more capabi
 
 ### dec-notes
 @TODO look into this protocol, try connecting, see if it's a good foothold
+While this is port 3333, it seems unlikely that it is actually dec-notes now that I have reviewed the hostory of the protocol. 
+Testing it doesn't seem to be another web interface or RTSP endpoint. I can connect via netcat, but there is no banner and I have not found a valid control sequence for it. More may be found later if I get around to that. 
 
 ### Playback Menu Option
 This is an option in the menu to play videos back on the screen. 
