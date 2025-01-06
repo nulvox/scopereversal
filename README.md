@@ -77,7 +77,7 @@ Just to to satiate my curiosity, I only changed the name of the downloaded file 
 # External Information
 
 ## MP4 format
-* [MP4 Format Spec|https://raw.githubusercontent.com/OpenAnsible/rust-mp4/master/docs/ISO_IEC_14496-14_2003-11-15.pdf]
-* [ISO Base Media File FOrmat|https://web.archive.org/web/20180219054429/http://l.web.umkc.edu/lizhu/teaching/2016sp.video-communication/ref/mp4.pdf]
-* [Some other explanation that was suggested to me|https://xhelmboyx.tripod.com/formats/mp4-layout.txt]
-* [quicktime spec|https://developer.apple.com/documentation/quicktime-file-format] which apparently also explains a lot of this nicely
+* [https://raw.githubusercontent.com/OpenAnsible/rust-mp4/master/docs/ISO_IEC_14496-14_2003-11-15.pdf|MP4 Format Spec]
+* [https://web.archive.org/web/20180219054429/http://l.web.umkc.edu/lizhu/teaching/2016sp.video-communication/ref/mp4.pdf|ISO Base Media File Format]
+* [https://xhelmboyx.tripod.com/formats/mp4-layout.txt|Some other explanation that was suggested to me]
+* [https://developer.apple.com/documentation/quicktime-file-format|quicktime spec] which apparently also explains a lot of this nicely
