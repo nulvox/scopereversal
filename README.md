@@ -1,4 +1,4 @@
-# NVG30
+# NVG50
 
 I was gifted this scope and found the IP camera side of it very interesting but alarmingly open. This writeup covers my efforts to know more about how it works and perhaps improve it some for my own use. While the product packaging is all NVG30, the firmware bootscreen says NVG50. :shrug: Upon further inspection, they seem to be very similar in the software stack, but distinct products. I have the NVG50 and I'm pretty pleased about that. 😅
 
