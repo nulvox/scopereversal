@@ -60,19 +60,42 @@ easy wins here, just popped a stream up with `ffplay rtsp://192.168.1.254:554`, 
 
 This doesn't really take input, so it's likely not a good way to get more capabilities, but the simplicity of the output it generates makes it easy for improving the local workflow. 
 
-### dec-notes
+### Port 3333
 @TODO look into this protocol, try connecting, see if it's a good foothold
 While this is port 3333, it seems unlikely that it is actually dec-notes now that I have reviewed the hostory of the protocol. 
 Testing it doesn't seem to be another web interface or RTSP endpoint. I can connect via netcat, but there is no banner and I have not found a valid control sequence for it. More may be found later if I get around to that. 
 
 ### Playback Menu Option
 This is an option in the menu to play videos back on the screen. 
+
 #### Playback of other Formats
 I downloaded some of the MP4 files I generated, converted them to mkv and mpeg files, and uploaded them to the web interface. Both files reported a parsing error by the web interface, so I downloaded the files again to make sure the content was correct and they seem to have uploaded fine. 
 
 Upon entering the playback menu, the files were not present. 
 
 Just to to satiate my curiosity, I only changed the name of the downloaded file to test_raw.MP4 and uploaded it. It did appear in the playback menu and run fine. 
+
+#### Crafting malicious MP4 files
+This seems like the most directly accessible and rich playground on the platform. We can already easily depliver a payload via USB or the webui and we can detonate with the 3 buttons on the side of the device. Not the most flexible in the wild, but a wonderfully accessible and bloaty interface for getting an initial foothold. 
+
+### Attacking the WebUI
+A few attacks here might still be valid:
+
+#### Dir Traversal
+@TODO
+
+#### What IS the param `?custom=1`?
+@TODO
+
+### Photonic attacks
+The system has a number of software features which cause behavior changes based on photon exposure. These might be leveraged in attacks
+
+#### Blind the Auto-IR Mode
+@TODO
+By default, the device is in a mode which automatically changes the IR settings based on the type of lighting you encounter. I observed some delay in the changes just from normally available lights and suspect it would be trivial to make this feature highly disruptive to the system with the correct light frequencies strobed at the proper rhythm. 
+
+#### Encoder Lag attacks
+Identifying the most expensive series of photons for the system to encode could lead to scope-lag attacks.
 
 # External Information
 
