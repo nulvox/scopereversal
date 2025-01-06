@@ -69,3 +69,5 @@ This is an option in the menu to play videos back on the screen.
 I downloaded some of the MP$ files I generated, converted them to mkv and mpeg files, and uploaded them to the web interface. Both files reported a parsing error by the web interface, so I downloaded the files again to make sure the content was correct and they seem to have uploaded fine. 
 
 Upon entering the playback menu, the files were not present. 
+
+Just to to satiate my curiosity, I only changed the name of the downloaded file to test_raw.MP4 and uploaded it. It did appear in the playback menu and run fine. 
