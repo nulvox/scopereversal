@@ -73,3 +73,11 @@ I downloaded some of the MP$ files I generated, converted them to mkv and mpeg f
 Upon entering the playback menu, the files were not present. 
 
 Just to to satiate my curiosity, I only changed the name of the downloaded file to test_raw.MP4 and uploaded it. It did appear in the playback menu and run fine. 
+
+# External Information
+
+## MP4 format
+* [MP4 Format Spec|https://raw.githubusercontent.com/OpenAnsible/rust-mp4/master/docs/ISO_IEC_14496-14_2003-11-15.pdf]
+* [ISO Base Media File FOrmat|https://web.archive.org/web/20180219054429/http://l.web.umkc.edu/lizhu/teaching/2016sp.video-communication/ref/mp4.pdf]
+* [Some other explanation that was suggested to me|https://xhelmboyx.tripod.com/formats/mp4-layout.txt]
+* [quicktime spec|https://developer.apple.com/documentation/quicktime-file-format] which apparently also explains a lot of this nicely
