@@ -68,7 +68,7 @@ Testing it doesn't seem to be another web interface or RTSP endpoint. I can conn
 ### Playback Menu Option
 This is an option in the menu to play videos back on the screen. 
 #### Playback of other Formats
-I downloaded some of the MP$ files I generated, converted them to mkv and mpeg files, and uploaded them to the web interface. Both files reported a parsing error by the web interface, so I downloaded the files again to make sure the content was correct and they seem to have uploaded fine. 
+I downloaded some of the MP4 files I generated, converted them to mkv and mpeg files, and uploaded them to the web interface. Both files reported a parsing error by the web interface, so I downloaded the files again to make sure the content was correct and they seem to have uploaded fine. 
 
 Upon entering the playback menu, the files were not present. 
 
