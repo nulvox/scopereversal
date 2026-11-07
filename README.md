@@ -1,4 +1,6 @@
-# NVG50
+# NVG30 / NVG50 Night-Vision Monocular — Hardware & Firmware Reconnaissance
+
+> **Status:** Exploratory hardware/network security research notes on the Novatek-based NVG30/NVG50 digital night-vision monocular (USB endpoints, exposed Wi-Fi AP services, RTSP stream, and HTTP upload behavior).
 
 I was gifted this scope and found the IP camera side of it very interesting but alarmingly open. This writeup covers my efforts to know more about how it works and perhaps improve it some for my own use. While the product packaging is all NVG30, the firmware bootscreen says NVG50. :shrug: Upon further inspection, they seem to be very similar in the software stack, but distinct products. I have the NVG50 and I'm pretty pleased about that. 😅
 
@@ -31,13 +33,6 @@ PORT     STATE SERVICE
 80/tcp   open  http
 554/tcp  open  rtsp
 3333/tcp open  dec-notes
-MAC Address: CC:64:1A:3B:C5:D9 (Shenzhen Bilian Electronic，LTD)Nmap scan report for 192.168.1.254
-Host is up (0.0039s latency).
-Not shown: 997 closed tcp ports (reset)
-PORT     STATE SERVICE
-80/tcp   open  http
-554/tcp  open  rtsp
-3333/tcp open  dec-notes
 MAC Address: CC:64:1A:3B:C5:D9 (Shenzhen Bilian Electronic，LTD)
 ```
 
@@ -53,7 +48,7 @@ The first thing I wanted to do was escape the http root, no dice on trivial inpu
 While it kinda looks like we can upload to the http root at first glance, there is strange behavior. Uploading anything like `index.html` in the standard upload box causes the session to be closed by the host, but uploading with the `upload custom` dialog takes the file and it never shows up (as normal for that form).
 
 #### Codec Abuse
-video codecs are complicated and easy to mess up. I suspect I can upload a speciallyc rafted video file to trigger a crash on the playback feature of the scope. Default format is MP4
+Video codecs are complicated and easy to mess up. I suspect I can upload a specially crafted video file to trigger a crash on the playback feature of the scope. Default format is MP4.
 
 ### rtsp
 easy wins here, just popped a stream up with `ffplay rtsp://192.168.1.254:554`, easily saved it with `ffmpeg -i rtsp://192.168.1.254:554 -r 15 output.mp4`
@@ -62,7 +57,7 @@ This doesn't really take input, so it's likely not a good way to get more capabi
 
 ### Port 3333
 @TODO look into this protocol, try connecting, see if it's a good foothold
-While this is port 3333, it seems unlikely that it is actually dec-notes now that I have reviewed the hostory of the protocol. 
+While this is port 3333, it seems unlikely that it is actually dec-notes now that I have reviewed the history of the protocol. 
 Testing it doesn't seem to be another web interface or RTSP endpoint. I can connect via netcat, but there is no banner and I have not found a valid control sequence for it. More may be found later if I get around to that. 
 
 ### Playback Menu Option
@@ -73,10 +68,10 @@ I downloaded some of the MP4 files I generated, converted them to mkv and mpeg f
 
 Upon entering the playback menu, the files were not present. 
 
-Just to to satiate my curiosity, I only changed the name of the downloaded file to test_raw.MP4 and uploaded it. It did appear in the playback menu and run fine. 
+Just to satiate my curiosity, I only changed the name of the downloaded file to test_raw.MP4 and uploaded it. It did appear in the playback menu and run fine. 
 
 #### Crafting malicious MP4 files
-This seems like the most directly accessible and rich playground on the platform. We can already easily depliver a payload via USB or the webui and we can detonate with the 3 buttons on the side of the device. Not the most flexible in the wild, but a wonderfully accessible and bloaty interface for getting an initial foothold. 
+This seems like the most directly accessible and rich playground on the platform. We can already easily deliver a payload via USB or the webui and we can detonate with the 3 buttons on the side of the device. Not the most flexible in the wild, but a wonderfully accessible and bloaty interface for getting an initial foothold. 
 
 ### Attacking the WebUI
 A few attacks here might still be valid:
